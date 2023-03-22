@@ -13,10 +13,10 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB"/>
-                    <Button Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
-                    <Button Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
-                    <Button Content="Supprimer" HorizontalAlignment="Left" Height="41" Margin="613,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <DataGrid x:Name="DtgCustomer" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB" SelectionChanged="DtgCustomer_SelectionChanged"/>
+                    <Button x:Name="BtnAdd" Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAdd_Click"/>
+                    <Button x:Name="BtnModify" Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnModify_Click"/>
+                    <Button x:Name="BtnDelete" Content="Supprimer" HorizontalAlignment="Left" Height="41" Margin="613,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnDelete_Click"/>
                     <Image Margin="633,-33,6,225" Source="3461664.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
                         <Image.RenderTransform>
                             <TransformGroup>
