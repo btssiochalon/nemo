@@ -5,8 +5,187 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetNemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Nemo" Height="450" Width="800">
+    <Grid Background="#FF93E7FB">
+        <TabControl HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Background="#FFD7F4FB" SelectionChanged="TabControl_SelectionChanged" BorderBrush="{x:Null}" BorderThickness="0">
+            <TabItem Header="Clients" Margin="11,-2,-14,0" BorderBrush="{x:Null}" IsSelected="True">
+                <Grid Background="#FFD7F4FB">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB"/>
+                    <Button Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Height="41" Margin="613,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Image Margin="633,-33,6,225" Source="3461664.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-53.381"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.367"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Employées" Margin="14,-2,-18,0" BorderBrush="{x:Null}">
+                <Grid Background="#FFD7F4FB">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB"/>
+                    <Button Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Height="41" Margin="613,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Image Margin="633,-33,6,225" Source="3461664.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-53.381"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.367"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Matériels" Margin="18,-2,-22,0" BorderBrush="{x:Null}">
+                <Grid Background="#FFD7F4FB">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB"/>
+                    <Button Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Height="41" Margin="613,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Image Margin="633,-33,6,225" Source="3461664.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-53.381"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.367"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Sites" Margin="88,-2,-93,0" BorderBrush="{x:Null}">
+                <Grid Background="#FFD7F4FB">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB"/>
+                    <Button Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Height="41" Margin="613,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Image Margin="633,-33,6,225" Source="3461664.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-53.381"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Locations" Margin="-15,-2,11,0" BorderBrush="{x:Null}">
+                <Grid Background="#FFD7F4FB">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB"/>
+                    <Button Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Height="41" Margin="613,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Image Margin="633,-33,6,225" Source="3461664.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-53.381"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.367"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Plongées" Margin="138,0,-138,-2" HorizontalAlignment="Left" Width="63" BorderBrush="{x:Null}" Background="#FFE5E5E5">
+                <Grid Background="#FFD7F4FB">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB"/>
+                    <Button Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Button Content="Supprimer" HorizontalAlignment="Left" Height="41" Margin="613,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
+                    <Image Margin="633,-33,6,225" Source="3461664.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-53.381"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.367"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+            </TabItem>
+            <Image Height="486" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" Width="1020"/>
+        </TabControl>
+
     </Grid>
 </Window>
