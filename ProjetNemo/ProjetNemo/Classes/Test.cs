@@ -8,5 +8,13 @@ namespace ProjetNemo.Classes
 {
     class Test
     {
-    }
+		private int myVar;
+
+		public int MyProperty
+		{
+			get { return myVar; }
+			set { myVar = value; }
+		}
+
+	}
 }
