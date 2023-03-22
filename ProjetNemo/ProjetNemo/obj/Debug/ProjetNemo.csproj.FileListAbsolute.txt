@@ -1,0 +1,5 @@
+C:\Users\nemo\ProjetNemo\ProjetNemo\obj\Debug\ProjetNemo.csprojAssemblyReference.cache
+C:\Users\nemo\ProjetNemo\ProjetNemo\obj\Debug\MainWindow.g.cs
+C:\Users\nemo\ProjetNemo\ProjetNemo\obj\Debug\App.g.cs
+C:\Users\nemo\ProjetNemo\ProjetNemo\obj\Debug\ProjetNemo_MarkupCompile.cache
+C:\Users\nemo\ProjetNemo\ProjetNemo\obj\Debug\ProjetNemo_MarkupCompile.lref
