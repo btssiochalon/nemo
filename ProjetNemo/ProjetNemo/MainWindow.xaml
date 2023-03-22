@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="toto" Height="450" Width="800">
     <Grid>
-        <Button Content="oui" HorizontalAlignment="Right" Margin="0,67,82,0" VerticalAlignment="Top" Width="646" Height="284"/>
+        <Button Content="ok" HorizontalAlignment="Right" Margin="0,67,82,0" VerticalAlignment="Top" Width="646" Height="284"/>
 
     </Grid>
 </Window>
