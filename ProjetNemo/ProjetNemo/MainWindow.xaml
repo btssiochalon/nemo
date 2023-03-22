@@ -13,6 +13,13 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    <TextBox x:Name="TxtIdC" HorizontalAlignment="Left" Height="34" Margin="312,14,0,0" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Width="102" IsUndoEnabled="True"/>
+                    <TextBox x:Name="TxtFirstnameC" HorizontalAlignment="Left" Height="34" Margin="312,80,0,0" TextWrapping="Wrap" Text="Prénom" VerticalAlignment="Top" Width="102"/>
+                    <TextBox x:Name="TxtNameC" HorizontalAlignment="Left" Height="34" Margin="475,14,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="102"/>
+                    <TextBox x:Name="TxtPhoneC" HorizontalAlignment="Left" Height="34" Margin="475,80,0,0" TextWrapping="Wrap" Text="Téléphone" VerticalAlignment="Top" Width="102"/>
+                    <TextBox x:Name="TxtMailC" HorizontalAlignment="Left" Height="34" Margin="312,148,0,0" TextWrapping="Wrap" Text="Mail" VerticalAlignment="Top" Width="102"/>
+                    <TextBox x:Name="TxtLevelC" HorizontalAlignment="Left" Height="34" Margin="475,148,0,0" TextWrapping="Wrap" Text="Niveau" VerticalAlignment="Top" Width="102"/>
+                    <TextBlock HorizontalAlignment="Left" Height="15" Margin="313,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
                     <DataGrid x:Name="DtgCustomer" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB" SelectionChanged="DtgCustomer_SelectionChanged"/>
                     <Button x:Name="BtnAdd" Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAdd_Click"/>
                     <Button x:Name="BtnModify" Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnModify_Click"/>
@@ -153,7 +160,7 @@
                     </Image>
                 </Grid>
             </TabItem>
-            <TabItem Header="Plongées" Margin="138,0,-138,-2" HorizontalAlignment="Left" Width="63" BorderBrush="{x:Null}" Background="#FFE5E5E5">
+            <TabItem Header="Plongées" Margin="0,-2,-32,0" HorizontalAlignment="Right" Width="63" BorderBrush="{x:Null}" Background="#FFE5E5E5">
                 <Grid Background="#FFD7F4FB">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
