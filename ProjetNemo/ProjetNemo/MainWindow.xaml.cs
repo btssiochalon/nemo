@@ -29,7 +29,7 @@ namespace ProjetNemo
             InitializeComponent();
 
             //Customers = bdd.SelectMagazine(); //Ajouts des données de la bdd
-            Customers.Sort((x, y) => 1 * x.Id.CompareTo(y.Id)); //Trie par ordre croissant
+            Customers.Sort((x, y) => 1 * x.Id.CompareTo(y.Id)); //Trie par ordre décroissant de numéro dans la bdd
 
             //Lie le Datagrid avec la collection
             DtgCustomer.ItemsSource = Customers;
@@ -38,17 +38,37 @@ namespace ProjetNemo
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
+            //Insertion dans la base de données via la classe passerelle
+            //bdd.InsertCustomer(dtpBouclageMagazine.Text, dtpParutionMagazine.Text, dtpPaiementMagazine.Text, Convert.ToDouble(txtBudgetMagazine.Text));
 
+            //Rafraichissement du Datagrid avec le contenu de la base 
+            Customers.Clear();
+            //Customers = bdd.SelectMagazine();
+            Customers.Sort((x, y) => 1 * x.Id.CompareTo(y.Id)); //Trie par ordre décroissant de numéro dans la bdd
+            DtgCustomer.ItemsSource = Customers;
         }
 
         private void BtnModify_Click(object sender, RoutedEventArgs e)
         {
-
+            // On change les propritétés de l'objet à l'indice trouvé. On ne change pas le numéro.
+            int i = Customers.IndexOf((Customer)DtgCustomer.SelectedItem);
+            Customers.ElementAt(i).Name = txtNameC.Text;
+            Customers.ElementAt(i).Firstname = txtFirstName.Text;
+            Customers.ElementAt(i).Phone = txtPhoneC.Text;
+            Customers.ElementAt(i).Email = txtEmailC.Text;
+            Customers.ElementAt(i).Level = Convert.ToInt32(txtEmailC.Text);
+            DtgCustomer.Items.Refresh
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
+            //bdd.DeleteCustomer(Convert.ToInt16(txtIdC.Text));
 
+            Customers.Clear();
+            //Customers = bdd.SelectContrat();
+            Customers.Sort((x, y) => 1 * x.Id.CompareTo(y.Id));
+            DtgCustomer.ItemsSource = Customers;
+            DtgCustomer.SelectedIndex = 0;
         }
 
         private void DtgCustomer_SelectionChanged(object sender, SelectionChangedEventArgs e)
