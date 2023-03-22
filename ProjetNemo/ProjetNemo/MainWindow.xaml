@@ -160,7 +160,7 @@
                     </Image>
                 </Grid>
             </TabItem>
-            <TabItem Header="Plongées" Margin="138,0,-138,-2" HorizontalAlignment="Left" Width="63" BorderBrush="{x:Null}" Background="#FFE5E5E5">
+            <TabItem Header="Plongées" Margin="0,-2,-32,0" HorizontalAlignment="Right" Width="63" BorderBrush="{x:Null}" Background="#FFE5E5E5">
                 <Grid Background="#FFD7F4FB">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
