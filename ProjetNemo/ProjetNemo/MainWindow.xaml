@@ -48,7 +48,7 @@
                     <Label Content="Téléphone" HorizontalAlignment="Left" Height="25" Margin="476,89,0,0" VerticalAlignment="Top" Width="102"/>
                     <Label Content="Mail" HorizontalAlignment="Left" Height="25" Margin="313,169,0,0" VerticalAlignment="Top" Width="102"/>
                     <Label Content="Niveau" HorizontalAlignment="Left" Height="25" Margin="476,169,0,0" VerticalAlignment="Top" Width="102"/>
-                    <ComboBox x:Name="ComboLevelC" HorizontalAlignment="Left" Height="34" Margin="476,199,0,0" VerticalAlignment="Top" Width="111" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="1">
+                    <ComboBox x:Name="ComboLevelC" HorizontalAlignment="Left" Height="34" Margin="476,199,0,0" VerticalAlignment="Top" Width="111" SelectedIndex="1">
                         <ComboBoxItem Content="Niveau 0" HorizontalAlignment="Left" Width="109"/>
                         <ComboBoxItem Content="Niveau 1" HorizontalAlignment="Left" Width="109"/>
                         <ComboBoxItem Content="Niveau 2" HorizontalAlignment="Left" Width="109"/>
