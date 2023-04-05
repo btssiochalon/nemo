@@ -74,7 +74,23 @@ namespace ProjetNemo
 
         private void DtgCustomer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Stockage dans l'objet selectedCustomer le Customer selectionné dans le datagrid DtgCustomer
+            Customer selectedCustomer = DtgCustomer.SelectedItem as Customer;
 
+            try
+            {
+                //Remplissage des Textboxs avec les données de l'objet Customer selectedCustomer récupéré dans le Datagrid DtgCustomer
+                TxtIdC.Text = Convert.ToString(selectedCustomer.Id);
+                TxtFirstnameC.Text = selectedCustomer.Firstname;
+                TxtNameC.Text = selectedCustomer.Name;
+                TxtPhoneC.Text = selectedCustomer.Phone;
+                TxtMailC.Text = selectedCustomer.Email;
+                TxtLevelC.Text = Convert.ToString(selectedCustomer.Level);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Erreur sur la mise à jour du formulaire lors du changement dans le Datagrid DtgCustomer");
+            }
         }
     }
 }
