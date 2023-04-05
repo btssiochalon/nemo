@@ -18,7 +18,13 @@
                     <TextBox x:Name="TxtFirstnameC" HorizontalAlignment="Right" Height="40" Margin="0,130,302,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
                     <TextBox x:Name="TxtPhoneC" HorizontalAlignment="Right" Height="40" Margin="0,130,100,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
                     <TextBox x:Name="TxtMailC" HorizontalAlignment="Right" Height="40" Margin="0,220,302,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-                    <TextBox x:Name="TxtLevelC" HorizontalAlignment="Right" Height="40" Margin="0,220,100,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+                    <ComboBox x:Name="ComboLevelC" HorizontalAlignment="Right" Height="40" Margin="0,220,100,0" VerticalAlignment="Top" Width="102" SelectedIndex="1">
+                        <ComboBoxItem Content="Niveau 0" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 1" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 2" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 3" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 4" HorizontalAlignment="Left" Width="109"/>
+                    </ComboBox>
                     <DataGrid x:Name="DtgCustomer" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF93E7FB" SelectionChanged="DtgCustomer_SelectionChanged"/>
                     <Button x:Name="BtnAdd" Content="Ajouter"  HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,330,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAdd_Click"/>
                     <Button x:Name="BtnModify" Content="Modifier" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,170,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnModify_Click"/>
