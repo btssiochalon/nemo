@@ -28,7 +28,6 @@ namespace ProjetNemo
         {
 
             InitializeComponent();
-            Console.WriteLine(Customers[1].Name);
             //Customers = bdd.SelectCustomer(); //Ajouts des données de la bdd
             Customers.Sort((x, y) => 1 * x.Id.CompareTo(y.Id)); //Trie par ordre décroissant de numéro dans la bdd
 
@@ -57,7 +56,7 @@ namespace ProjetNemo
             Customers.ElementAt(i).Firstname = TxtFirstnameC.Text;
             Customers.ElementAt(i).Phone = TxtPhoneC.Text;
             Customers.ElementAt(i).Email = TxtMailC.Text;
-            Customers.ElementAt(i).Level = Convert.ToInt32(TxtMailC.Text);
+            Customers.ElementAt(i).Level = Convert.ToInt32(TxtLevelC.Text);
             DtgCustomer.Items.Refresh();
         }
 
