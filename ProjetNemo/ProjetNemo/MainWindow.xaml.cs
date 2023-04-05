@@ -39,7 +39,7 @@ namespace ProjetNemo
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             //Insertion dans la base de données via la classe passerelle
-            Bdd.InsertCustomer(TxtNameC.Text, TxtFirstnameC.Text, TxtPhoneC.Text, TxtMailC.Text, Convert.ToInt32(TxtLevelC.Text));
+            Bdd.InsertCustomer(TxtNameC.Text, TxtFirstnameC.Text, TxtPhoneC.Text, TxtMailC.Text, Convert.ToInt32(ComboLevelC.SelectedIndex));
 
             //Rafraichissement du Datagrid avec le contenu de la bdd 
             Customers.Clear();
@@ -52,13 +52,13 @@ namespace ProjetNemo
         {
             // On change les propritétés de l'objet à l'indice trouvé. On ne change pas le numéro.
 
-            Bdd.UpdateCustomer(Convert.ToInt32(TxtIdC.Text), TxtNameC.Text, TxtFirstnameC.Text, TxtPhoneC.Text, TxtMailC.Text, Convert.ToInt32(TxtLevelC.Text));
+            Bdd.UpdateCustomer(Convert.ToInt32(TxtIdC.Text), TxtNameC.Text, TxtFirstnameC.Text, TxtPhoneC.Text, TxtMailC.Text, Convert.ToInt32(ComboLevelC.SelectedIndex));
             int i = Customers.IndexOf((Customer)DtgCustomer.SelectedItem);
             Customers.ElementAt(i).Name = TxtNameC.Text;
             Customers.ElementAt(i).Firstname = TxtFirstnameC.Text;
             Customers.ElementAt(i).Phone = TxtPhoneC.Text;
             Customers.ElementAt(i).Email = TxtMailC.Text;
-            Customers.ElementAt(i).Level = Convert.ToInt32(TxtLevelC.Text);
+            Customers.ElementAt(i).Level = Convert.ToInt32(ComboLevelC.SelectedIndex);
             DtgCustomer.Items.Refresh();
         }
 
@@ -88,7 +88,7 @@ namespace ProjetNemo
                         TxtNameC.Text = selectedCustomer.Name;
                         TxtPhoneC.Text = selectedCustomer.Phone;
                         TxtMailC.Text = selectedCustomer.Email;
-                        TxtLevelC.Text = Convert.ToString(selectedCustomer.Level);
+                        ComboLevelC.SelectedIndex = selectedCustomer.Level;
                     }
                 catch (Exception)
                     {
