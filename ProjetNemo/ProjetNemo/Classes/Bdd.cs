@@ -157,11 +157,11 @@ namespace ProjetNemo.Classes
                 CloseConnection();
             }
         } 
-        public static void UpdateCustomer(int customer_id, string name, string fistname, string phone, string email, int level)
+        public static void UpdateCustomer(int customer_id, string name, string firstname, string phone, string email, int level)
         {
             //Requête Update customers
-            string query = "UPDATE clients SET name='" + name + "',  fistname='" + fistname + "',  phone='" + phone + "',  email='" + email + "', level='" + level +
-                "' WHERE id=" + customer_id;
+            string query = "UPDATE customers SET name='" + name + "',  firstname='" + firstname + "',  phone='" + phone + "',  email='" + email + "', level=" + level + " " +
+                "WHERE id=" + customer_id;
             Console.WriteLine(query);
             //Console.WriteLine(Bdd.OpenConnection());
             if (Bdd.OpenConnection() == true)

@@ -23,7 +23,38 @@ namespace UnitTestNenom
             {
                 Assert.IsTrue(true);
             }
-
+        }
+        [TestMethod]
+        public void TestUpdate()
+        {
+            try
+            {
+                Bdd.UpdateCustomer(1,"Alexis", "Yanguas", "0782561205", "yanguasalexis@gmail.com", 1);
+            }
+            catch (Exception ex)
+            {
+                Assert.IsFalse(true);
+            }
+            finally
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        [TestMethod]
+        public void TestDelete()
+        {
+            try
+            {
+                Bdd.DeleteCustomer(2);
+            }
+            catch (Exception ex)
+            {
+                Assert.IsFalse(true);
+            }
+            finally
+            {
+                Assert.IsTrue(true);
+            }
         }
     }
 }
