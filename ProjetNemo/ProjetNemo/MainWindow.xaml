@@ -16,9 +16,8 @@
                     <TextBox x:Name="TxtIdC" HorizontalAlignment="Left" Height="34" Margin="313,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" IsUndoEnabled="True" IsEnabled="False"/>
                     <TextBox x:Name="TxtFirstnameC" HorizontalAlignment="Left" Height="34" Margin="313,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
                     <TextBox x:Name="TxtNameC" HorizontalAlignment="Left" Height="34" Margin="476,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-                    <TextBox x:Name="TxtPhoneC" HorizontalAlignment="Left" Height="34" Margin="476,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+                    <TextBox x:Name="TxtPhoneC" HorizontalAlignment="Left" Height="34" Margin="476,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" MaxLength="10"/>
                     <TextBox x:Name="TxtMailC" HorizontalAlignment="Left" Height="34" Margin="313,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-                    <TextBox x:Name="TxtLevelC" HorizontalAlignment="Left" Height="34" Margin="476,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
                     <DataGrid x:Name="DtgCustomer" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB" SelectionChanged="DtgCustomer_SelectionChanged"/>
                     <Button x:Name="BtnAdd" Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAdd_Click"/>
                     <Button x:Name="BtnModify" Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnModify_Click"/>
@@ -49,6 +48,13 @@
                     <Label Content="Téléphone" HorizontalAlignment="Left" Height="25" Margin="476,89,0,0" VerticalAlignment="Top" Width="102"/>
                     <Label Content="Mail" HorizontalAlignment="Left" Height="25" Margin="313,169,0,0" VerticalAlignment="Top" Width="102"/>
                     <Label Content="Niveau" HorizontalAlignment="Left" Height="25" Margin="476,169,0,0" VerticalAlignment="Top" Width="102"/>
+                    <ComboBox x:Name="ComboLevelC" HorizontalAlignment="Left" Height="34" Margin="476,199,0,0" VerticalAlignment="Top" Width="111" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="1">
+                        <ComboBoxItem Content="Niveau 0" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 1" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 2" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 3" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 4" HorizontalAlignment="Left" Width="109"/>
+                    </ComboBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Employées" Margin="14,-2,-18,0" BorderBrush="{x:Null}">
