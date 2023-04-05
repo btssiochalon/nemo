@@ -74,7 +74,40 @@ namespace CRM
                 return false;
             }
         }
-                //--------------------------------------------------------------------PRODUIT----------------------------------------------
+        //--------------------------------------------------------------------PRODUIT----------------------------------------------
+        public static List<Produit> SelectProduitById(int idprod)
+        {
+            //Select statement
+            string query = "SELECT * FROM produit where idProd = " + idprod;
+
+            //Create a list to store the result
+            List<Produit> dbProduit = new List<Produit>();
+
+            //Ouverture connection
+            if (bdd.OpenConnection() == true)
+            {
+                //Creation Command MySQL
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Création d'un DataReader et execution de la commande
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Lecture des données et stockage dans la collection
+                while (dataReader.Read())
+                {
+                    Produit leProduit = new Produit(Convert.ToInt16(dataReader["IdProd"]), Convert.ToString(dataReader["TypeProd"]), Convert.ToInt32(dataReader["PrixProd"]), Convert.ToString(dataReader["NomProd"]), Convert.ToString(dataReader["DescProd"]));
+                    dbProduit.Add(leProduit);
+                }
+
+                //fermeture du Data Reader
+                dataReader.Close();
+
+                //fermeture Connection
+                bdd.CloseConnection();
+
+                //retour de la collection pour être affichée
+            }
+            return dbProduit;
+        }
         public static List<Produit> SelectProduit()
         {
             //Select statement
@@ -185,7 +218,40 @@ namespace CRM
                 bdd.CloseConnection();
             }
         }
-            //--------------------------------------------------------------------EMPLOYE----------------------------------------------
+        //--------------------------------------------------------------------EMPLOYE----------------------------------------------
+        public static List<Employe> SelectEmployeById(int idemp)
+        {
+            //Select statement
+            string query = "SELECT * FROM employe where IdEmp = " + idemp;
+
+            //Create a list to store the result
+            List<Employe> dbEmploye = new List<Employe>();
+
+            //Ouverture connection
+            if (bdd.OpenConnection() == true)
+            {
+                //Creation Command MySQL
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Création d'un DataReader et execution de la commande
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Lecture des données et stockage dans la collection
+                while (dataReader.Read())
+                {
+                    Employe leEmploye = new Employe(Convert.ToInt16(dataReader["IdEmp"]), Convert.ToString(dataReader["NomEmp"]), Convert.ToString(dataReader["PrenomEmp"]), Convert.ToString(dataReader["TelEmp"]), Convert.ToString(dataReader["MailEmp"]), Convert.ToString(dataReader["PosteEmp"]));
+                    dbEmploye.Add(leEmploye);
+                }
+
+                //fermeture du Data Reader
+                dataReader.Close();
+
+                //fermeture Connection
+                bdd.CloseConnection();
+
+                //retour de la collection pour être affichée
+            }
+            return dbEmploye;
+        }
         public static List<Employe> SelectEmploye()
         {
             //Select statement
@@ -296,7 +362,40 @@ namespace CRM
                 bdd.CloseConnection();
             }
         }
-               //--------------------------------------------------------------------CLIENT----------------------------------------------
+        //--------------------------------------------------------------------CLIENT----------------------------------------------
+        public static List<Client> SelectClientById(int idcli)
+        {
+            //Select statement
+            string query = "SELECT * FROM client where IdCli = " + idcli;
+
+            //Create a list to store the result
+            List<Client> dbClient = new List<Client>();
+
+            //Ouverture connection
+            if (bdd.OpenConnection() == true)
+            {
+                //Creation Command MySQL
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Création d'un DataReader et execution de la commande
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Lecture des données et stockage dans la collection
+                while (dataReader.Read())
+                {
+                    Client leClient = new Client(Convert.ToInt16(dataReader["IdCli"]), Convert.ToString(dataReader["NomCli"]), Convert.ToString(dataReader["PrenomCli"]), Convert.ToString(dataReader["MailCli"]), Convert.ToString(dataReader["VilleCli"]), Convert.ToString(dataReader["NomRueCli"]), Convert.ToInt32(dataReader["CPCli"]), Convert.ToInt32(dataReader["IdProspect"]));
+                    dbClient.Add(leClient);
+                }
+
+                //fermeture du Data Reader
+                dataReader.Close();
+
+                //fermeture Connection
+                bdd.CloseConnection();
+
+                //retour de la collection pour être affichée
+            }
+            return dbClient;
+        }
         public static List<Client> SelectClient()
         {
             //Select statement
@@ -408,10 +507,10 @@ namespace CRM
             }
         }
         //--------------------------------------------------------------------RDV----------------------------------------------
-        public static List<Rdv> SelectRdv()
+        public static List<Rdv> SelectRdvById(int idrdv)
         {
             //Select statement
-            string query = "SELECT * FROM rdv r INNER JOIN client c ON r.IdCli = c.IdCli INNER JOIN employe e ON r.IdEmp = e.IdEmp";
+            string query = "SELECT * FROM rdv where idRdv = " + idrdv;
 
             //Create a list to store the result
             List<Rdv> dbRdv = new List<Rdv>();
@@ -427,9 +526,7 @@ namespace CRM
                 //Lecture des données et stockage dans la collection
                 while (dataReader.Read())
                 {
-                    Client leClient = new Client(Convert.ToInt16(dataReader["IdCli"]), Convert.ToString(dataReader["NomCli"]), Convert.ToString(dataReader["PrenomCli"]), Convert.ToString(dataReader["MailCli"]), Convert.ToString(dataReader["VilleCli"]), Convert.ToString(dataReader["NomRueCli"]), Convert.ToInt32(dataReader["CPCli"]), Convert.ToInt32(dataReader["IdProspect"]));
-                    Employe leEmploye = new Employe(Convert.ToInt16(dataReader["IdEmp"]), Convert.ToString(dataReader["NomEmp"]), Convert.ToString(dataReader["PrenomEmp"]), Convert.ToString(dataReader["TelEmp"]), Convert.ToString(dataReader["MailEmp"]), Convert.ToString(dataReader["PosteEmp"]));
-                    Rdv leRdv = new Rdv(Convert.ToInt32(dataReader["IdRdv"]), leClient, leEmploye, Convert.ToDateTime(dataReader["DateRdv"]), Convert.ToString(dataReader["HeureRdv"])) ;
+                    Rdv leRdv = new Rdv(Convert.ToInt32(dataReader["IdRdv"]), Convert.ToInt32(dataReader["IdCli"]), Convert.ToInt32(dataReader["IdEmp"]), Convert.ToString(dataReader["DateRdv"]), Convert.ToString(dataReader["HeureRdv"]));
                     dbRdv.Add(leRdv);
                 }
 
@@ -443,7 +540,40 @@ namespace CRM
             }
             return dbRdv;
         }
-        public static void InsertRdv(Client idcli, Employe idemp, DateTime date, string heure)
+        public static List<Rdv> SelectRdv()
+        {
+            //Select statement
+            string query = "SELECT * FROM rdv";
+
+            //Create a list to store the result
+            List<Rdv> dbRdv = new List<Rdv>();
+
+            //Ouverture connection
+            if (bdd.OpenConnection() == true)
+            {
+                //Creation Command MySQL
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Création d'un DataReader et execution de la commande
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Lecture des données et stockage dans la collection
+                while (dataReader.Read())
+                {
+                    Rdv leRdv = new Rdv(Convert.ToInt32(dataReader["IdRdv"]), Convert.ToInt32(dataReader["IdCli"]), Convert.ToInt32(dataReader["IdEmp"]), Convert.ToString(dataReader["DateRdv"]), Convert.ToString(dataReader["HeureRdv"]));
+                    dbRdv.Add(leRdv);
+                }
+
+                //fermeture du Data Reader
+                dataReader.Close();
+
+                //fermeture Connection
+                bdd.CloseConnection();
+
+                //retour de la collection pour être affichée
+            }
+            return dbRdv;
+        }
+        public static void InsertRdv(int idcli, int idemp, string date, string heure)
         {
             //Requête Insertion Rdv
             string query = "INSERT INTO Rdv (IdCli, IdEmp, DateRdv, HeureRdv) VALUES('" + idcli + "','" + idemp + "','" + date + "','" + heure + "')";
@@ -474,7 +604,7 @@ namespace CRM
                 bdd.CloseConnection();
             }
         }
-        public static void UpdateRdv(int id, int idcli, int idemp, DateTime date, string heure)
+        public static void UpdateRdv(int id, int idcli, int idemp, string date, string heure)
         {
             //Update Rdv
             string query = "UPDATE Rdv SET IdCli=" + idcli + ", IdEmp=" + idemp + ", DateRdv =" + date + ", HeureRdv =" + heure + "WHERE IdRdv=" + id;
