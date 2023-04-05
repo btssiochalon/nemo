@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30204.135
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetNemo", "ProjetNemo\ProjetNemo.csproj", "{F1E5665D-78A3-485D-ACCD-E27A5624F759}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestNenom", "UnitTestNenom\UnitTestNenom.csproj", "{E91D4074-4C5A-48D4-B1D7-D8ABF85DDB8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F1E5665D-78A3-485D-ACCD-E27A5624F759}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1E5665D-78A3-485D-ACCD-E27A5624F759}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1E5665D-78A3-485D-ACCD-E27A5624F759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E91D4074-4C5A-48D4-B1D7-D8ABF85DDB8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E91D4074-4C5A-48D4-B1D7-D8ABF85DDB8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E91D4074-4C5A-48D4-B1D7-D8ABF85DDB8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E91D4074-4C5A-48D4-B1D7-D8ABF85DDB8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

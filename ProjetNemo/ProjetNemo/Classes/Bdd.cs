@@ -107,90 +107,75 @@ namespace ProjetNemo.Classes
         }
         public static List<Customer> SelectClientWhereId(int customer_id)
         {
-            //Select statement
+
             string query = "SELECT * FROM customers Where id=" + customer_id;
-
-            //Create a list to store the result
             List<Customer> dbCustomers = new List<Customer>();
-
-            //Ouverture connection
             if (OpenConnection() == true)
             {
-                //Creation Command MySQL
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                //Création d'un DataReader et execution de la commande
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                //Lecture des données et stockage dans la collection
                 while (dataReader.Read())
                 {
                     Customer customerTemp = new Customer(Convert.ToInt16(dataReader["id"]), Convert.ToString(dataReader["name"]), Convert.ToString(dataReader["firstname"]), Convert.ToString(dataReader["phone"]),
                         Convert.ToString(dataReader["email"]), Convert.ToInt16(dataReader["level"]));
                     dbCustomers.Add(customerTemp);
                 }
-
-                //fermeture du Data Reader
                 dataReader.Close();
                 Console.WriteLine(dataReader);
-
-                //fermeture Connection
-                Bdd.CloseConnection();
+                CloseConnection();
             }
-            //retour de la collection pour être affichée
             return dbCustomers;
         }
-        //public static void InsertClient(string nomC, string prenomC, string mailC, string telC, string villeC, string rueC, string cpC, int prospect)
-        //{
-        //    //Requête Insertion Magazine
-        //    string query = "INSERT INTO  clients  (  NomCli ,  PrenomCli ,  MailCli ,  TelCli, VilleCli, RueCli, CpCli, Prospect ) " +
-        //        "VALUES('" + nomC + "','" + prenomC + "','" + mailC + "','" + telC + "','" + villeC + "','" + rueC + "','" + cpC + "'," + prospect + ")";
-        //    Console.WriteLine(query);
-        //    //Console.WriteLine(Bdd.OpenConnection());
-        //    if (Bdd.OpenConnection() == true)
-        //    {
-        //        //create command and assign the query and connection from the constructor
-        //        MySqlCommand cmd = new MySqlCommand(query, conn);
+        public static void InsertCustomer(string name, string firstname, string phone, string email, int level)
+        {
+            //Requête Insertion customer
+            string query = "INSERT INTO  customers  (name,  firstname,  phone,  email, level) " +
+                "VALUES('" + name + "','" + firstname + "','" + phone + "','" + email + "'," + level + ")";
+            Console.WriteLine(query);
+            if (OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, conn);
 
-        //        //Execute command
-        //        cmd.ExecuteNonQuery();
-        //        Console.WriteLine("Le client à été ajouté");
-        //        Bdd.CloseConnection();
+                //Execute command
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Le client à été ajouté");
+                CloseConnection();
 
-        //    }
-        //}
-        //public static void DeleteClient(int numC)
-        //{
-        //    //Delete Magazine
-        //    string query = "DELETE FROM Clients WHERE id=" + numC;
+            }
+        }
+        public static void DeleteCustomer(int customer_id)
+        {
+            //Delete Customer
+            string query = "DELETE FROM customers WHERE id=" + customer_id;
 
-        //    if (Bdd.OpenConnection() == true)
-        //    {
-        //        MySqlCommand cmd = new MySqlCommand(query, conn);
-        //        cmd.ExecuteNonQuery();
-        //        Console.WriteLine("Le client à été supprimé");
-        //        Bdd.CloseConnection();
-        //    }
-        //}
-        //public static void UpdateClient(int numC, string nomC, string prenomC, string mailC, string telC, string villeC, string rueC, string cpC, int prospect)
-        //{
-        //    //Requête Insertion Magazine
-        //    string query = "UPDATE clients SET NomCli='" + nomC + "',  PrenomCli='" + prenomC + "',  MailCli='" + mailC + "',  TelCli='" + telC + "', VilleCli='" + villeC + "', RueCli='" + rueC + "', CpCli='" + cpC + "', Prospect=" + prospect + " " +
-        //        "WHERE id=" + numC;
-        //    Console.WriteLine(query);
-        //    //Console.WriteLine(Bdd.OpenConnection());
-        //    if (Bdd.OpenConnection() == true)
-        //    {
-        //        //create command and assign the query and connection from the constructor
-        //        MySqlCommand cmd = new MySqlCommand(query, conn);
+            if (OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Le client à été supprimé");
+                CloseConnection();
+            }
+        } 
+        public static void UpdateCustomer(int customer_id, string name, string firstname, string phone, string email, int level)
+        {
+            //Requête Update customers
+            string query = "UPDATE customers SET name='" + name + "',  firstname='" + firstname + "',  phone='" + phone + "',  email='" + email + "', level=" + level + " " +
+                "WHERE id=" + customer_id;
+            Console.WriteLine(query);
+            //Console.WriteLine(Bdd.OpenConnection());
+            if (Bdd.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, conn);
 
-        //        //Execute command
-        //        cmd.ExecuteNonQuery();
-        //        Console.WriteLine("Le client à été modifié");
-        //        Bdd.CloseConnection();
+                //Execute command
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Le client à été modifié");
+                Bdd.CloseConnection();
 
-        //    }
-        //}
+            }
+        }
         #endregion
 
     }
