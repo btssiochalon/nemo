@@ -22,12 +22,13 @@ namespace ProjetNemo
     public partial class MainWindow : Window
     {
         //Création Listes
-        List<Customer> Customers = new List<Customer>();
+        List<Customer> Customers = Bdd.SelectAllCustomers();
 
         public MainWindow()
         {
-            InitializeComponent();
 
+            InitializeComponent();
+            Console.WriteLine(Customers[1].Name);
             //Customers = bdd.SelectCustomer(); //Ajouts des données de la bdd
             Customers.Sort((x, y) => 1 * x.Id.CompareTo(y.Id)); //Trie par ordre décroissant de numéro dans la bdd
 

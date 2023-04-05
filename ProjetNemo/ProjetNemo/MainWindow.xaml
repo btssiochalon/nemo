@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Nemo" Height="450" Width="800">
     <Grid Background="#FF93E7FB">
-        <TabControl HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Background="#FFD7F4FB" SelectionChanged="TabControl_SelectionChanged" BorderBrush="{x:Null}" BorderThickness="0">
+        <TabControl HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Background="#FFD7F4FB" BorderBrush="{x:Null}" BorderThickness="0">
             <TabItem Header="Clients" Margin="11,-2,-14,0" BorderBrush="{x:Null}" IsSelected="True">
                 <Grid Background="#FFD7F4FB">
                     <Grid.ColumnDefinitions>
