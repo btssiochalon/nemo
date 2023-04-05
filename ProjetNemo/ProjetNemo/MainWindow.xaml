@@ -127,6 +127,16 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
+                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.367"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
                 </Grid>
             </TabItem>
             <TabItem Header="Locations" Margin="-15,-2,11,0" BorderBrush="{x:Null}">
@@ -191,7 +201,6 @@
                     </Image>
                 </Grid>
             </TabItem>
-            <Image Height="486" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" Width="1020"/>
         </TabControl>
 
     </Grid>
