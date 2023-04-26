@@ -25,7 +25,7 @@
                         <ComboBoxItem Content="Niveau 3" HorizontalAlignment="Left" Width="109"/>
                         <ComboBoxItem Content="Niveau 4" HorizontalAlignment="Left" Width="109"/>
                     </ComboBox>
-                    <DataGrid x:Name="DtgCustomer" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF93E7FB" SelectionChanged="DtgCustomer_SelectionChanged"/>
+                    <DataGrid x:Name="DtgCustomer" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF93E7FB" SelectionChanged="DtgCustomer_SelectionChanged" Width="492"/>
                     <Button x:Name="BtnAdd" Content="Ajouter"  HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,330,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAdd_Click"/>
                     <Button x:Name="BtnModify" Content="Modifier" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,170,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnModify_Click"/>
                     <Button x:Name="BtnDelete" Content="Supprimer" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,10,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnDelete_Click"/>
@@ -62,11 +62,23 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="286" BorderBrush="#FF93E7FB"/>
-                    <Button Content="Ajouter" HorizontalAlignment="Left" Height="41" Margin="301,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
-                    <Button Content="Modifier" HorizontalAlignment="Left" Height="41" Margin="457,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
-                    <Button Content="Supprimer" HorizontalAlignment="Left" Height="41" Margin="613,320,0,0" VerticalAlignment="Top" Width="147" Background="#FF93E7FB" Foreground="White" BorderBrush="White"/>
-                    <Image Margin="633,-33,6,225" Source="3461664.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <TextBox x:Name="TxtIdE" HorizontalAlignment="Right" Height="40" Margin="0,40,302,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" IsUndoEnabled="True" IsEnabled="False"/>
+                    <TextBox x:Name="TxtNameE" HorizontalAlignment="Right" Height="40" Margin="0,40,100,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+                    <TextBox x:Name="TxtFirstnameE" HorizontalAlignment="Right" Height="40" Margin="0,130,302,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+                    <TextBox x:Name="TxtPhoneE" HorizontalAlignment="Right" Height="40" Margin="0,130,100,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+                    <TextBox x:Name="TxtMailE" HorizontalAlignment="Right" Height="40" Margin="0,220,302,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+                    <ComboBox x:Name="ComboJobE" HorizontalAlignment="Right" Height="40" Margin="0,220,100,0" VerticalAlignment="Top" Width="102" SelectedIndex="1">
+                        <ComboBoxItem Content="Niveau 0" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 1" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 2" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 3" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Niveau 4" HorizontalAlignment="Left" Width="109"/>
+                    </ComboBox>
+                    <DataGrid x:Name="DtgEmployee" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF93E7FB" SelectionChanged="DtgCustomer_SelectionChanged" Width="492"/>
+                    <Button x:Name="BtnAddE" Content="Ajouter"  HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,330,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAdd_Click"/>
+                    <Button x:Name="BtnModifyE" Content="Modifier" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,170,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnModify_Click"/>
+                    <Button x:Name="BtnDeleteE" Content="Supprimer" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,10,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnDelete_Click"/>
+                    <Image Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Source="3461664.png" Stretch="Fill" Panel.ZIndex="-1" MaxHeight="100" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -76,7 +88,7 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
-                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Uniform" MaxWidth="100" MaxHeight="100" RenderTransformOrigin="0,0">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -86,6 +98,12 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
+                    <Label Content="Id" HorizontalAlignment="Right" Height="25"  Margin="0,10,302,0" VerticalAlignment="Top" Width="102"/>
+                    <Label Content="Nom" HorizontalAlignment="Right" Height="25" Margin="0,10,100,0" VerticalAlignment="Top" Width="102"/>
+                    <Label Content="Prénom" HorizontalAlignment="Right" Height="25" Margin="0,100,302,0" VerticalAlignment="Top" Width="102"/>
+                    <Label Content="Téléphone" HorizontalAlignment="Right" Height="25" Margin="0,100,100,0" VerticalAlignment="Top" Width="102"/>
+                    <Label Content="Mail" HorizontalAlignment="Right" Height="25" Margin="0,190,302,0" VerticalAlignment="Top" Width="102"/>
+                    <Label Content="Métier" HorizontalAlignment="Right" Height="25" Margin="0,190,100,0" VerticalAlignment="Top" Width="102"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Matériels" Margin="18,-2,-22,0" BorderBrush="{x:Null}">
@@ -107,7 +125,7 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
-                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Uniform" MaxWidth="100" MaxHeight="100" RenderTransformOrigin="0,0">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -138,7 +156,7 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
-                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Uniform" MaxWidth="100" MaxHeight="100" RenderTransformOrigin="0,0">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -169,7 +187,7 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
-                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Uniform" MaxWidth="100" MaxHeight="100" RenderTransformOrigin="0,0">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -200,7 +218,7 @@
                             </TransformGroup>
                         </Image.RenderTransform>
                     </Image>
-                    <Image Margin="699,4,6,339" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Source="Scuba-Diver-PNG-Transparent-Image.png" Stretch="Uniform" MaxWidth="100" MaxHeight="100" RenderTransformOrigin="0,0">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
