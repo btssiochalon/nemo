@@ -18,12 +18,11 @@ namespace ProjetNemo.Classes
 
         #endregion
         #region Accesseurs/Mutateurs
-        public int Job
+        public string JobName
         {
-            get { return job; }
-            set { job = value; }
+            get { return getJobString(); }
         }
-
+       
 
         public string Email
         {
@@ -58,6 +57,12 @@ namespace ProjetNemo.Classes
             get { return id; }
             set { id = value; }
         }
+        public int Job
+        {
+            get { return job; }
+            set { job = value; }
+        }
+
         #endregion
         #region Constructeurs
         public Employee(int _id, string _name, string _firstname, string _phone, string _email, int _job)
@@ -75,6 +80,31 @@ namespace ProjetNemo.Classes
         {
             // Méthode ToString() surchargée qui écrase la méthode ToString() de base
             return name + " " + firstname;
+        }
+
+        string jobString;
+        public string getJobString()
+        {
+            switch(Job)
+            {
+                case 0:
+                    jobString = "Gérant";
+                    break;
+                case 1:
+                    jobString = "Moniteur";
+                    break;
+                case 2:
+                    jobString = "Marin";
+                    break;
+                case 3:
+                    jobString = "Secrétaire";
+                    break;
+                case 4:
+                    jobString = "Stagiaire";
+                    break;
+            }
+            return jobString;
+               
         }
         #endregion
     }
