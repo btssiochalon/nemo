@@ -234,7 +234,7 @@ namespace ProjetNemo.Classes
         public static void InsertEmployee(string name, string firstname, string phone, string email, int job)
         {
             //Requête Insertion customer
-            string query = "INSERT INTO  employee  (name,  firstname,  phone,  email, job) " +
+            string query = "INSERT INTO  employees  (name,  firstname,  phone,  email, job) " +
                 "VALUES('" + name + "','" + firstname + "','" + phone + "','" + email + "'," + job + ")";
             Console.WriteLine(query);
             if (OpenConnection() == true)
@@ -252,7 +252,7 @@ namespace ProjetNemo.Classes
         public static void DeleteEmployee(int employee_id)
         {
             //Delete Customer
-            string query = "DELETE FROM employee WHERE id=" + employee_id;
+            string query = "DELETE FROM employees WHERE id=" + employee_id;
 
             if (OpenConnection() == true)
             {

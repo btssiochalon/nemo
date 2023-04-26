@@ -126,7 +126,6 @@ namespace ProjetNemo
         private void BtnModifyE_Click(object sender, RoutedEventArgs e)
         {
             // On change les propritétés de l'objet à l'indice trouvé. On ne change pas le numéro.
-
             Bdd.UpdateEmployee(Convert.ToInt32(TxtIdE.Text), TxtNameE.Text, TxtFirstnameE.Text, TxtPhoneE.Text, TxtMailE.Text, Convert.ToInt32(ComboJobE.SelectedIndex));
             int i = Employees.IndexOf((Employee)DtgEmployee.SelectedItem);
             Employees.ElementAt(i).Name = TxtNameE.Text;
