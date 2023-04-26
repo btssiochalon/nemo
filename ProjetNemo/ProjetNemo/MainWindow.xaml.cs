@@ -42,7 +42,7 @@ namespace ProjetNemo
             DtgCustomer.ItemsSource = Customers;
             DtgCustomer.SelectedIndex = 0;
 
-            DtgEmployee.ItemsSource = Employee;
+            DtgEmployee.ItemsSource = Employees;
             DtgEmployee.SelectedIndex = 0;
         }
 
