@@ -68,11 +68,11 @@
                     <TextBox x:Name="TxtPhoneE" HorizontalAlignment="Right" Height="40" Margin="0,130,100,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
                     <TextBox x:Name="TxtMailE" HorizontalAlignment="Right" Height="40" Margin="0,220,302,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
                     <ComboBox x:Name="ComboJobE" HorizontalAlignment="Right" Height="40" Margin="0,220,100,0" VerticalAlignment="Top" Width="102" SelectedIndex="1">
-                        <ComboBoxItem Content="Niveau 0" HorizontalAlignment="Left" Width="109"/>
-                        <ComboBoxItem Content="Niveau 1" HorizontalAlignment="Left" Width="109"/>
-                        <ComboBoxItem Content="Niveau 2" HorizontalAlignment="Left" Width="109"/>
-                        <ComboBoxItem Content="Niveau 3" HorizontalAlignment="Left" Width="109"/>
-                        <ComboBoxItem Content="Niveau 4" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Gérant" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Moniteur" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Marin" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Secrétaire" HorizontalAlignment="Left" Width="109"/>
+                        <ComboBoxItem Content="Stagiaire" HorizontalAlignment="Left" Width="109"/>
                     </ComboBox>
                     <DataGrid x:Name="DtgEmployee" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF93E7FB" SelectionChanged="DtgCustomer_SelectionChanged" Width="492"/>
                     <Button x:Name="BtnAddE" Content="Ajouter"  HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,330,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAddE_Click"/>
