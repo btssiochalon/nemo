@@ -42,7 +42,7 @@ namespace ProjetNemo
             DtgCustomer.ItemsSource = Customers;
             DtgCustomer.SelectedIndex = 0;
 
-            DtgEmployee.ItemsSource = Employee;
+            DtgEmployee.ItemsSource = Employees;
             DtgEmployee.SelectedIndex = 0;
         }
 
@@ -133,7 +133,7 @@ namespace ProjetNemo
             Employees.ElementAt(i).Firstname = TxtFirstnameE.Text;
             Employees.ElementAt(i).Phone = TxtPhoneE.Text;
             Employees.ElementAt(i).Email = TxtMailE.Text;
-            Employees.ElementAt(i).Level = Convert.ToInt32(ComboJobE.SelectedIndex);
+            Employees.ElementAt(i).Job = Convert.ToInt32(ComboJobE.SelectedIndex);
             DtgEmployee.Items.Refresh();
         }
 
