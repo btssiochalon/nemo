@@ -1,10 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 
 
 namespace ProjetNemo.Classes
@@ -179,7 +175,7 @@ namespace ProjetNemo.Classes
         #endregion
 
         #region Employee
-        public static List<Customer> SelectAllEmployees()
+        public static List<Employee> SelectAllEmployees()
         {
             //Select statement
             string query = "SELECT * FROM employees";
@@ -218,14 +214,14 @@ namespace ProjetNemo.Classes
         {
 
             string query = "SELECT * FROM employees Where id=" + employee_id;
-            List<Customer> dbEmployees = new List<Customer>();
+            List<Employee> dbEmployees = new List<Employee>();
             if (OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    Employee employeeTemp = new Customer(Convert.ToInt16(dataReader["id"]), Convert.ToString(dataReader["name"]), Convert.ToString(dataReader["firstname"]), Convert.ToString(dataReader["phone"]),
+                    Employee employeeTemp = new Employee(Convert.ToInt16(dataReader["id"]), Convert.ToString(dataReader["name"]), Convert.ToString(dataReader["firstname"]), Convert.ToString(dataReader["phone"]),
                         Convert.ToString(dataReader["email"]), Convert.ToInt16(dataReader["job"]));
                     dbEmployees.Add(employeeTemp);
                 }

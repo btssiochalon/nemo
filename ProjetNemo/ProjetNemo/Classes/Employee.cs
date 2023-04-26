@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetNemo.Classes
 {
-    class Employee
+    public class Employee
     {
         #region Champs
         private int id;
