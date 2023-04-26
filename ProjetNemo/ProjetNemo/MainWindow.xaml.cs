@@ -23,20 +23,31 @@ namespace ProjetNemo
     {
         //Création Listes
         List<Customer> Customers = Bdd.SelectAllCustomers();
+        List<Employee> Employees = Bdd.SelectAllEmployees();
 
         public MainWindow()
         {
 
             InitializeComponent();
-            Customers = Bdd.SelectAllCustomers(); //Ajouts des données de la bdd
-            Customers.Sort((x, y) => 1 * x.Id.CompareTo(y.Id)); //Trie par ordre décroissant de numéro dans la bdd
+
+            //Ajouts des données de la bdd
+            Customers = Bdd.SelectAllCustomers();
+            Employees = Bdd.SelectAllEmployees();
+
+            //Trie par ordre décroissant de numéro dans la bdd
+            Customers.Sort((x, y) => 1 * x.Id.CompareTo(y.Id));
+            Employees.Sort((x, y) => 1 * x.Id.CompareTo(y.Id));
 
             //Lie le Datagrid avec la collection
             DtgCustomer.ItemsSource = Customers;
             DtgCustomer.SelectedIndex = 0;
+
+            DtgEmployee.ItemsSource = Employee;
+            DtgEmployee.SelectedIndex = 0;
         }
 
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        //--------------------------------------------------CUSTOMERS------------------------------------------------
+        private void BtnAddC_Click(object sender, RoutedEventArgs e)
         {
             //Insertion dans la base de données via la classe passerelle
             Bdd.InsertCustomer(TxtNameC.Text, TxtFirstnameC.Text, TxtPhoneC.Text, TxtMailC.Text, Convert.ToInt32(ComboLevelC.SelectedIndex));
@@ -48,7 +59,7 @@ namespace ProjetNemo
             DtgCustomer.ItemsSource = Customers;
         }
 
-        private void BtnModify_Click(object sender, RoutedEventArgs e)
+        private void BtnModifyC_Click(object sender, RoutedEventArgs e)
         {
             // On change les propritétés de l'objet à l'indice trouvé. On ne change pas le numéro.
 
@@ -62,7 +73,7 @@ namespace ProjetNemo
             DtgCustomer.Items.Refresh();
         }
 
-        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        private void BtnDeleteC_Click(object sender, RoutedEventArgs e)
         {
             Bdd.DeleteCustomer(Convert.ToInt16(TxtIdC.Text));
 
@@ -73,7 +84,7 @@ namespace ProjetNemo
             DtgCustomer.SelectedIndex = 0;
         }
 
-        private void DtgCustomer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DtgCustomerC_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Stockage dans l'objet selectedCustomer le Customer selectionné dans le datagrid DtgCustomer
             Customer selectedCustomer = DtgCustomer.SelectedItem as Customer;
@@ -96,6 +107,70 @@ namespace ProjetNemo
                     }
             }
             
+        }
+
+        //--------------------------------------------------EMPLOYEES------------------------------------------------
+
+        private void BtnAddE_Click(object sender, RoutedEventArgs e)
+        {
+            //Insertion dans la base de données via la classe passerelle
+            Bdd.InsertEmployee(TxtNameE.Text, TxtFirstnameE.Text, TxtPhoneE.Text, TxtMailE.Text, Convert.ToInt32(ComboJobE.SelectedIndex));
+
+            //Rafraichissement du Datagrid avec le contenu de la bdd 
+            Employees.Clear();
+            Employees = Bdd.SelectAllEmployees();
+            Employees.Sort((x, y) => 1 * x.Id.CompareTo(y.Id)); //Trie par ordre décroissant de numéro dans la bdd
+            DtgEmployee.ItemsSource = Employees;
+        }
+
+        private void BtnModifyE_Click(object sender, RoutedEventArgs e)
+        {
+            // On change les propritétés de l'objet à l'indice trouvé. On ne change pas le numéro.
+
+            Bdd.UpdateEmployee(Convert.ToInt32(TxtIdE.Text), TxtNameE.Text, TxtFirstnameE.Text, TxtPhoneE.Text, TxtMailE.Text, Convert.ToInt32(ComboJobE.SelectedIndex));
+            int i = Employees.IndexOf((Employee)DtgEmployee.SelectedItem);
+            Employees.ElementAt(i).Name = TxtNameE.Text;
+            Employees.ElementAt(i).Firstname = TxtFirstnameE.Text;
+            Employees.ElementAt(i).Phone = TxtPhoneE.Text;
+            Employees.ElementAt(i).Email = TxtMailE.Text;
+            Employees.ElementAt(i).Level = Convert.ToInt32(ComboJobE.SelectedIndex);
+            DtgEmployee.Items.Refresh();
+        }
+
+        private void BtnDeleteE_Click(object sender, RoutedEventArgs e)
+        {
+            Bdd.DeleteEmployee(Convert.ToInt16(TxtIdE.Text));
+
+            Employees.Clear();
+            Employees = Bdd.SelectAllEmployees();
+            Employees.Sort((x, y) => 1 * x.Id.CompareTo(y.Id));
+            DtgEmployee.ItemsSource = Employees;
+            DtgEmployee.SelectedIndex = 0;
+        }
+
+        private void DtgEmployeeE_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Stockage dans l'objet selectedEmployee le Employee selectionné dans le datagrid DtgEmployee
+            Employee selectedEmployee = DtgEmployee.SelectedItem as Employee;
+
+            if (selectedEmployee != null)
+            {
+                try
+                {
+                    //Remplissage des Textboxs avec les données de l'objet Employee selectedEmployee récupéré dans le Datagrid DtgEmployee
+                    TxtIdE.Text = Convert.ToString(selectedEmployee.Id);
+                    TxtFirstnameE.Text = selectedEmployee.Firstname;
+                    TxtNameE.Text = selectedEmployee.Name;
+                    TxtPhoneE.Text = selectedEmployee.Phone;
+                    TxtMailE.Text = selectedEmployee.Email;
+                    ComboJobE.SelectedIndex = selectedEmployee.Job;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Erreur sur la mise à jour du formulaire lors du changement dans le Datagrid DtgEmployee");
+                }
+            }
+
         }
     }
 }
