@@ -105,7 +105,7 @@ namespace ProjetNemo.Classes
             //retour de la collection pour être affichée
             return dbCustomers;
         }
-        public static List<Customer> SelectClientWhereId(int customer_id)
+        public static List<Customer> SelectCustomerWhereId(int customer_id)
         {
 
             string query = "SELECT * FROM customers Where id=" + customer_id;
@@ -172,6 +172,115 @@ namespace ProjetNemo.Classes
                 //Execute command
                 cmd.ExecuteNonQuery();
                 Console.WriteLine("Le client à été modifié");
+                Bdd.CloseConnection();
+
+            }
+        }
+        #endregion
+
+        #region Employee
+        public static List<Customer> SelectAllEmployees()
+        {
+            //Select statement
+            string query = "SELECT * FROM employees";
+
+            //Create a list to store the result
+            List<Employee> dbEmployees = new List<Employee>();
+
+            //Ouverture connection
+            if (OpenConnection() == true)
+            {
+                //Creation Command MySQL
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                //Création d'un DataReader et execution de la commande
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Lecture des données et stockage dans la collection
+                while (dataReader.Read())
+                {
+                    Employee employeeTemp = new Employee(Convert.ToInt16(dataReader["id"]), Convert.ToString(dataReader["name"]), Convert.ToString(dataReader["firstname"]), Convert.ToString(dataReader["phone"]),
+                        Convert.ToString(dataReader["email"]), Convert.ToInt16(dataReader["job"]));
+                    dbEmployees.Add(employeeTemp);
+                }
+
+                //fermeture du Data Reader
+                dataReader.Close();
+                Console.WriteLine(dataReader);
+
+                //fermeture Connection
+                CloseConnection();
+            }
+            //retour de la collection pour être affichée
+            return dbEmployees;
+        }
+        public static List<Employee> SelectEmployeeWhereId(int employee_id)
+        {
+
+            string query = "SELECT * FROM employees Where id=" + employee_id;
+            List<Customer> dbEmployees = new List<Customer>();
+            if (OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Employee employeeTemp = new Customer(Convert.ToInt16(dataReader["id"]), Convert.ToString(dataReader["name"]), Convert.ToString(dataReader["firstname"]), Convert.ToString(dataReader["phone"]),
+                        Convert.ToString(dataReader["email"]), Convert.ToInt16(dataReader["job"]));
+                    dbEmployees.Add(employeeTemp);
+                }
+                dataReader.Close();
+                Console.WriteLine(dataReader);
+                CloseConnection();
+            }
+            return dbEmployees;
+        }
+        public static void InsertEmployee(string name, string firstname, string phone, string email, int job)
+        {
+            //Requête Insertion customer
+            string query = "INSERT INTO  employee  (name,  firstname,  phone,  email, job) " +
+                "VALUES('" + name + "','" + firstname + "','" + phone + "','" + email + "'," + job + ")";
+            Console.WriteLine(query);
+            if (OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("L'employé.e à été ajouté");
+                CloseConnection();
+
+            }
+        }
+        public static void DeleteEmployee(int employee_id)
+        {
+            //Delete Customer
+            string query = "DELETE FROM employee WHERE id=" + employee_id;
+
+            if (OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("L'employé.e à été supprimé");
+                CloseConnection();
+            }
+        }
+        public static void UpdateEmployee(int employee_id, string name, string firstname, string phone, string email, int job)
+        {
+            //Requête Update customers
+            string query = "UPDATE employees SET name='" + name + "',  firstname='" + firstname + "',  phone='" + phone + "',  email='" + email + "', job=" + job + " " +
+                "WHERE id=" + employee_id;
+            Console.WriteLine(query);
+            //Console.WriteLine(Bdd.OpenConnection());
+            if (Bdd.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("L'employé.e à été modifié");
                 Bdd.CloseConnection();
 
             }
