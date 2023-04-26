@@ -26,9 +26,9 @@
                         <ComboBoxItem Content="Niveau 4" HorizontalAlignment="Left" Width="109"/>
                     </ComboBox>
                     <DataGrid x:Name="DtgCustomer" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF93E7FB" SelectionChanged="DtgCustomer_SelectionChanged" Width="492"/>
-                    <Button x:Name="BtnAdd" Content="Ajouter"  HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,330,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAdd_Click"/>
-                    <Button x:Name="BtnModify" Content="Modifier" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,170,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnModify_Click"/>
-                    <Button x:Name="BtnDelete" Content="Supprimer" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,10,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnDelete_Click"/>
+                    <Button x:Name="BtnAddC" Content="Ajouter"  HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,330,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAddC_Click"/>
+                    <Button x:Name="BtnModifyC" Content="Modifier" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,170,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnModifyC_Click"/>
+                    <Button x:Name="BtnDeleteC" Content="Supprimer" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,10,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnDeleteC_Click"/>
                     <Image Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Source="3461664.png" Stretch="Fill" Panel.ZIndex="-1" MaxHeight="100" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
                         <Image.RenderTransform>
                             <TransformGroup>
@@ -75,9 +75,9 @@
                         <ComboBoxItem Content="Niveau 4" HorizontalAlignment="Left" Width="109"/>
                     </ComboBox>
                     <DataGrid x:Name="DtgEmployee" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF93E7FB" SelectionChanged="DtgCustomer_SelectionChanged" Width="492"/>
-                    <Button x:Name="BtnAddE" Content="Ajouter"  HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,330,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAdd_Click"/>
-                    <Button x:Name="BtnModifyE" Content="Modifier" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,170,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnModify_Click"/>
-                    <Button x:Name="BtnDeleteE" Content="Supprimer" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,10,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnDelete_Click"/>
+                    <Button x:Name="BtnAddE" Content="Ajouter"  HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,330,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnAddE_Click"/>
+                    <Button x:Name="BtnModifyE" Content="Modifier" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,170,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnModifyE_Click"/>
+                    <Button x:Name="BtnDeleteE" Content="Supprimer" HorizontalAlignment="Right" Height="41" VerticalAlignment="Bottom" Width="150" Margin="0,0,10,10" Background="#FF93E7FB" Foreground="White" BorderBrush="White" Click="BtnDeleteE_Click"/>
                     <Image Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Source="3461664.png" Stretch="Fill" Panel.ZIndex="-1" MaxHeight="100" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
                         <Image.RenderTransform>
                             <TransformGroup>
