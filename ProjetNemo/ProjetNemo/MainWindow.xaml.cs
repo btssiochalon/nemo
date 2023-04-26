@@ -84,7 +84,7 @@ namespace ProjetNemo
             DtgCustomer.SelectedIndex = 0;
         }
 
-        private void DtgCustomerC_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DtgCustomer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Stockage dans l'objet selectedCustomer le Customer selectionné dans le datagrid DtgCustomer
             Customer selectedCustomer = DtgCustomer.SelectedItem as Customer;
@@ -148,7 +148,7 @@ namespace ProjetNemo
             DtgEmployee.SelectedIndex = 0;
         }
 
-        private void DtgEmployeeE_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DtgEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             // Stockage dans l'objet selectedEmployee le Employee selectionné dans le datagrid DtgEmployee
             Employee selectedEmployee = DtgEmployee.SelectedItem as Employee;
