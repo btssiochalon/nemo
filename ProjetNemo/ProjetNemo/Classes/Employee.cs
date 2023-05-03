@@ -16,11 +16,18 @@ namespace ProjetNemo.Classes
         private string email;
         private int job;
 
+
         #endregion
         #region Accesseurs/Mutateurs
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         public string JobName
         {
-            get { return getJobString(); }
+            get { return getJobString(job); }
+            set { job = getJobInt(value); }
         }
        
 
@@ -52,16 +59,8 @@ namespace ProjetNemo.Classes
         }
 
 
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-        public int Job
-        {
-            get { return job; }
-            set { job = value; }
-        }
+       
+       
 
         #endregion
         #region Constructeurs
@@ -83,9 +82,9 @@ namespace ProjetNemo.Classes
         }
 
         string jobString;
-        public string getJobString()
+        public string getJobString(int job)
         {
-            switch(Job)
+            switch (job)
             {
                 case 0:
                     jobString = "Gérant";
@@ -104,7 +103,32 @@ namespace ProjetNemo.Classes
                     break;
             }
             return jobString;
-               
+
+        }
+
+        int jobInt;
+        public int getJobInt(string job)
+        {
+            switch (job)
+            {
+                case "Gérant":
+                    jobInt = 0;
+                    break;
+                case "Moniteur":
+                    jobInt = 1;
+                    break;
+                case "Marin":
+                    jobInt = 2;
+                    break;
+                case "Secrétaire":
+                    jobInt = 3;
+                    break;
+                case "Stagiaire":
+                    jobInt = 4;
+                    break;
+            }
+            return jobInt;
+
         }
         #endregion
     }

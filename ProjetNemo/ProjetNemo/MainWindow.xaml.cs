@@ -43,6 +43,7 @@ namespace ProjetNemo
             DtgCustomer.SelectedIndex = 0;
 
             DtgEmployee.ItemsSource = Employees;
+            
             DtgEmployee.SelectedIndex = 0;
         }
 
@@ -132,7 +133,7 @@ namespace ProjetNemo
             Employees.ElementAt(i).Firstname = TxtFirstnameE.Text;
             Employees.ElementAt(i).Phone = TxtPhoneE.Text;
             Employees.ElementAt(i).Email = TxtMailE.Text;
-            Employees.ElementAt(i).Job = Convert.ToInt32(ComboJobE.SelectedIndex);
+            Employees.ElementAt(i).JobName = ComboJobE.Text;
             DtgEmployee.Items.Refresh();
         }
 
@@ -151,6 +152,13 @@ namespace ProjetNemo
         {
             // Stockage dans l'objet selectedEmployee le Employee selectionné dans le datagrid DtgEmployee
             Employee selectedEmployee = DtgEmployee.SelectedItem as Employee;
+            try
+            {
+                DtgEmployee.Columns[2].Visibility = 0;
+            } catch (Exception ex)
+            {
+                Console.WriteLine("Erreur sur la mise à jour du formulaire lors du changement dans le Datagrid DtgEmployee");
+            }
 
             if (selectedEmployee != null)
             {
@@ -162,7 +170,7 @@ namespace ProjetNemo
                     TxtNameE.Text = selectedEmployee.Name;
                     TxtPhoneE.Text = selectedEmployee.Phone;
                     TxtMailE.Text = selectedEmployee.Email;
-                    ComboJobE.SelectedIndex = selectedEmployee.Job;
+                    ComboJobE.Text = selectedEmployee.JobName;
                 }
                 catch (Exception)
                 {
